@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TIN Registration Portal</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="portal.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <img src="ura-logo.png" alt="URA Logo">
+        <h1>TIN Registration Portal</h1>
+    </header>
+
+    <!-- Information Bar -->
+    <div class="info-bar">
+        Have your National ID ready before starting.
+    </div>
+
+    <!-- Form Area -->
+    <main class="form-container">
+
+        <!-- Taxpayer Type Toggle -->
+        <div class="taxpayer-type">
+
+            <input type="radio" id="individual" name="taxpayer-type" checked>
+            <label for="individual">Individual Taxpayer</label>
+
+            <input type="radio" id="business" name="taxpayer-type">
+            <label for="business">Business Entity</label>
+
+        </div>
+
+        <!-- Individual Taxpayer Form -->
+        <form>
+
+            <fieldset>
+
+                <legend>Section A: Individual Taxpayer Details</legend>
+
+                <!-- Full Name -->
+                <div class="form-group">
+                    <label for="full-name">Full Name</label>
+                    <input
+                        type="text"
+                        id="full-name"
+                        name="full-name"
+                        required
+                    >
+                </div>
+
+                <!-- NIN -->
+                <div class="form-group">
+                    <label for="nin">NIN</label>
+                    <input
+                        type="text"
+                        id="nin"
+                        name="nin"
+                        pattern="[A-Z]{2}[A-Z0-9]{12}"
+                        maxlength="14"
+                        required
+                    >
+                </div>
+
+                <!-- Date of Birth -->
+                <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input
+                        type="date"
+                        id="dob"
+                        name="dob"
+                    >
+                </div>
+
+                <!-- Gender -->
+                <div class="form-group">
+                    <label>Gender</label>
+
+                    <div class="gender-options">
+                        <label for="male">
+                            <input
+                                type="radio"
+                                id="male"
+                                name="gender"
+                                value="Male"
+                            >
+                            Male
+                        </label>
+
+                        <label for="female">
+                            <input
+                                type="radio"
+                                id="female"
+                                name="gender"
+                                value="Female"
+                            >
+                            Female
+                        </label>
+                    </div>
+                </div>
+
+                <!-- District -->
+                <div class="form-group">
+                    <label for="district">District</label>
+
+                    <select id="district" name="district">
+                        <option value="">-- Select District --</option>
+                        <option value="Kampala">Kampala</option>
+                        <option value="Wakiso">Wakiso</option>
+                        <option value="Mukono">Mukono</option>
+                        <option value="Jinja">Jinja</option>
+                        <option value="Mbarara">Mbarara</option>
+                    </select>
+                </div>
+
+                <!-- Phone -->
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        required
+                    >
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Email</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                    >
+                </div>
+
+                <!-- National ID Upload -->
+                <div class="form-group">
+                    <label for="national-id">Upload National ID</label>
+
+                    <input
+                        type="file"
+                        id="national-id"
+                        name="national-id"
+                        accept=".jpg,.pdf"
+                    >
+                </div>
+
+                <!-- Next Button -->
+                <button type="submit">Next</button>
+
+            </fieldset>
+
+        </form>
+
+    </main>
+
+</body>
+</html>
